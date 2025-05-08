@@ -1,0 +1,80 @@
+.product-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.loading, .no-products {
+    font-style: italic;
+    color: #666;
+    margin: 20px 0;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.actions {
+    margin: 20px 0;
+}
+
+.new-product-btn {
+    background: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.products-table th,
+.products-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.products-table th {
+    background-color: #f2f2f2;
+}
+
+.products-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.actions-cell {
+    white-space: nowrap;
+}
+
+.view-btn, .edit-btn, .delete-btn {
+    margin-right: 5px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}

@@ -1,0 +1,24 @@
+<div class="product-detail-container">
+    <h2>Product Details</h2>
+
+    <div *ngIf="loading" class="loading">Loading product...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngIf="product" class="product-card">
+        <div class="product-header">
+            <h3>{{ product.name }}</h3>
+            <div class="price-tag">${{ product.price.toFixed(2) }}</div>
+        </div>
+
+        <div class="product-body">
+            <p class="product-id"><strong>ID:</strong> {{ product.id }}</p>
+            <p class="product-description"><strong>Description:</strong> {{ product.description }}</p>
+        </div>
+
+        <div class="product-actions">
+            <button (click)="editProduct()" class="edit-btn">Edit</button>
+            <button (click)="deleteProduct()" class="delete-btn">Delete</button>
+            <button (click)="goToList()" class="back-btn">Back to List</button>
+        </div>
+    </div>
+</div>

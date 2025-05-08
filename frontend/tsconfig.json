@@ -1,0 +1,25 @@
+// File: frontend/tsconfig.json
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2020",
+    "lib": ["es2018", "dom"],
+    "declaration": false,
+    "sourceMap": true,
+    "outDir": "./dist/out-tsc",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": "./",
+    "paths": {}
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  }
+}

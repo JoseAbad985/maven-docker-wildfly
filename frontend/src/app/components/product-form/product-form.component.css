@@ -1,0 +1,8 @@
+/* File: frontend/src/app/components/product-form/product-form.component.css */
+.container { max-width: 600px; margin: 0 auto; padding: 20px; }
+.loading { font-style: italic; color: #666; }
+.alert-danger { background: #f8d7da; color: #721c24; padding: 10px; }
+label { display: block; margin-top: 10px; }
+input, textarea { width: 100%; padding: 8px; margin-top: 4px; }
+button { margin-top: 20px; padding: 10px 16px; }
+

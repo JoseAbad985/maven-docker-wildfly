@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+    <datasource jndi-name="java:jboss/datasources/PostgresDS" pool-name="PostgresDS" enabled="true" use-java-context="true">
+        <connection-url>jdbc:postgresql://${env.DB_HOST}:${env.DB_PORT}/${env.DB_NAME}</connection-url>
+        <driver>postgresql</driver>
+        <security>
+            <user-name>${env.DB_USER}</user-name>
+            <password>${env.DB_PASSWORD}</password>
+        </security>
+    </datasource>
+    <drivers>
+        <driver name="postgresql" module="org.postgresql">
+            <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+        </driver>
+    </drivers>
+</datasources>

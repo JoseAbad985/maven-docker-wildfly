@@ -1,0 +1,41 @@
+# File: docker-compose.yml
+
+version: '3'
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: productdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  wildfly:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=productdb
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+
+  angular:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - wildfly
+
+volumes:
+  postgres_data:
