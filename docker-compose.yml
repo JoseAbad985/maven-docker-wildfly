@@ -1,10 +1,10 @@
 # File: docker-compose.yml
 
-version: '3'
+# Note: version is obsolete and will be ignored, as mentioned in Docker warning
 
 services:
   postgres:
-    image: postgres:14
+    image: joseabad985/wildfly-angular-postgres:latest
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -15,8 +15,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   wildfly:
-    build:
-      context: ./backend
+    image: joseabad985/wildfly-angular-backend:latest
     ports:
       - "8080:8080"
       - "9990:9990"
@@ -30,8 +29,7 @@ services:
       - DB_PASSWORD=postgres
 
   angular:
-    build:
-      context: ./frontend
+    image: joseabad985/wildfly-angular-frontend:latest
     ports:
       - "4200:80"
     depends_on:
