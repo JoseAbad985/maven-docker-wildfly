@@ -56,9 +56,9 @@ export class ProductFormComponent implements OnInit {
                 this.loading = false;
             },
             error: (err) => {
-                this.error = 'Error loading product: ' + (err.message || 'Unknown error');
+                this.error = 'Error al Cargar Producto: ' + (err.message || 'Error Desconocido');
                 this.loading = false;
-                console.error('Error loading product', err);
+                console.error('Error al Cargar Producto:', err);
             }
         });
     }

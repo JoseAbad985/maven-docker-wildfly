@@ -1,17 +1,17 @@
 <!-- File: frontend/src/app/components/product-form/product-form.component.html -->
-<div *ngIf="loading" class="loading">Loading...</div>
+<div *ngIf="loading" class="loading">Cargando...</div>
 <div *ngIf="error" class="alert-danger">{{ error }}</div>
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <label>Nombre</label>
     <input formControlName="name">
-    <div *ngIf="submitted && f.name.errors">Name is required (min 2 chars).</div>
+    <div *ngIf="submitted && f.name.errors">El nombre es requerido (min 2 chars).</div>
 
     <label>Descripcion</label>
     <textarea formControlName="description"></textarea>
-    <div *ngIf="submitted && f.description.errors">Description is required.</div>
+    <div *ngIf="submitted && f.description.errors">La descripcion es requerida.</div>
     <label>Precio</label>
     <input type="number" formControlName="price">
-    <div *ngIf="submitted && f.price.errors">Price must be ≥ 0.01.</div>
+    <div *ngIf="submitted && f.price.errors">El precio debe ser ≥ 0.01.</div>
 
-    <button type="submit">{{ isEditMode ? 'Update' : 'Create' }} Product</button>
+    <button type="submit">{{ isEditMode ? 'Update' : 'Create' }} Producto</button>
 </form>

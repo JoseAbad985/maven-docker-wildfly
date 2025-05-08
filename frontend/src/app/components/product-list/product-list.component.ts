@@ -37,14 +37,14 @@ export class ProductListComponent implements OnInit {
     }
 
     deleteProduct(id: number): void {
-        if (confirm('Are you sure you want to delete this product?')) {
+        if (confirm('Estas seguro de que quieres borrar el producto?')) {
             this.productService.deleteProduct(id).subscribe({
                 next: () => {
                     this.products = this.products.filter(p => p.id !== id);
                 },
                 error: (err) => {
-                    this.error = 'Error deleting product: ' + (err.message || 'Unknown error');
-                    console.error('Error deleting product', err);
+                    this.error = 'Error Borrando el producto: ' + (err.message || 'Error Desconocido');
+                    console.error('Error Borrando el producto:', err);
                 }
             });
         }
